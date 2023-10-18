@@ -9,10 +9,10 @@ const titulo = document.querySelector('.app__title');
 const botoes = document.querySelectorAll('.app__card-button');
 const musicaFocoInput = document.querySelector('#alternar-musica');
 const iniciarOuPausarBt = document.querySelector('#start-pause span')
-const musica = new Audio('/sons/luna-rise-part-one.mp3');
-const somPlay = new Audio('/sons/play.wav');
-const somPause = new Audio('/sons/pause.mp3');
-const somFim = new Audio('/sons/beep.mp3')
+const musica = new Audio('./sons/luna-rise-part-one.mp3');
+const somPlay = new Audio('./sons/play.wav');
+const somPause = new Audio('./sons/pause.mp3');
+const somFim = new Audio('./sons/beep.mp3')
 const startPauseBt = document.querySelector('#start-pause')
 
 let tempoDecorridoEmSedundos = 1500
@@ -30,7 +30,7 @@ function alterarContexto(contexto) { // função onde o contexto é substituido 
     })
 
     html.setAttribute('data-contexto', contexto)
-    banner.setAttribute('src', `/imagens/${contexto}.png`)
+    banner.setAttribute('src', `./imagens/${contexto}.png`)
     switch (contexto) {
         case "foco":
             titulo.innerHTML = `
@@ -74,13 +74,13 @@ function iniciarOuPausar() {
     somPlay.play()
     intervaloId = setInterval(contagemRegressiva, 1000); // set interval recebe dois falores oque voce quer contar em qual intervalo em milisegundos
     iniciarOuPausarBt.textContent = "Pausar"
-    pauseBt.setAttribute('src', `/imagens/pause.png`)
+    pauseBt.setAttribute('src', `./imagens/pause.png`)
 }
 
 function zerar() {
     clearInterval(intervaloId)
     iniciarOuPausarBt.textContent = "Começar"
-    pauseBt.setAttribute('src', `/imagens/play_arrow.png`)
+    pauseBt.setAttribute('src', `./imagens/play_arrow.png`)
     intervaloId = null
 }
 
